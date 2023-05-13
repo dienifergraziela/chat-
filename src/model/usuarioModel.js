@@ -1,7 +1,7 @@
 const db = require("./db");
 async function registrarUsuario(nick) {
     return await db.insertOne("usuario",{"nick":nick});
-    /*sera-que-tem-mais-ver*/
+    /**/
 }
 
 module.exports = {registrarUsuario}
