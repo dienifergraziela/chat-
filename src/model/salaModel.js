@@ -7,20 +7,20 @@ function listarSalas() {
     return[
         {
             "_id":{
-                "$oid": "938rseaos0w3735d"/**/
+                "$oid": "643ece43ea11e6e5b0421f10"
             },
             "nome":"Guerreiros da InfoCimol",
             "tipo":"publica"
         },{
             "_id": {
-                "$oid": "gdgteuey7443uwrui"
+                "$oid": "64ece1ea11e6e5b0421f12"
             },
             "nome": "Só os confirmados da INFO",
             "tipo": "privada",
-            "chave": "at8q4haw"/*igualCandido*/
+            "chave": "at8q4haw"
         },{
             "_id": {
-                "$iod": "oer84iufhce4r8"
+                "$iod": "643f22a2ea11e6e50421f18"
             },
             "nome": "Guerreiros da INFO",
             "tipo": "publico"
