@@ -29,4 +29,16 @@ app.use("/entrar",router.post("/entrar", async(req,res,next) => {
     res.status(200).send(resp);
 }));
 
+app.use("/sala/entrar", router.put("/sala/entrar", async(req, res) => {
+    if(!token.checkToken(req.headers.token, req.headers.iduser,req.headers.nick)) return false;
+    let resp = await salaController.entrar(req.headers.iduser, req.query.idsala);
+    res.status(200).send(resp);
+}))
+
+app.use("/sala/mensagem/", router.post("/sala/mensagem", async(req, res) => {
+    if(!token.checkToken(req.headers.token, req.headers.iduser,req.headers.nick)) return false;
+    let resp = await salaController.enviarMensagem(req.headers.nick, req.body.msg, req.body.idsala);
+    res.status(200).send(resp);
+}))
+
 module.exports = app;

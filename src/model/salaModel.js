@@ -28,4 +28,27 @@ function listarSalas() {
     ];
 }
 
+
+async function buscarSala(idsala){
+    return db.findOne("salas", idsala);
+}
+
+async function atualizarMensagens(sala){
+    return await db.updateOne("salas", sala,{_id:sala._id});
+}
+
+async function buscarMensagens(idsala, timesstamp){
+    let sala = await buscarSala(idsala);
+    if(sala.msgs){
+        let msgs = [];
+        sala.msgs.forEach(msg => {
+            if(msg.timestamp > timesstamp){
+                msgs.push(msg);
+            }
+        });
+        return msgs;
+    }
+    return [];
+}
+
 module.exports = {listarSalas}
